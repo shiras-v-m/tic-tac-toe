@@ -1,0 +1,302 @@
+:root{
+    --board-background:aquamarine;
+    --border-color:rgb(161, 161, 161);
+    --border-width:8px;
+}
+body{
+    font-family: 'Lato', sans-serif;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    position: relative;
+    /* display: flex;
+    flex-direction: column; */
+        /* width: 100%;
+        height: 100vh;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center; */
+}
+.board{
+    position: relative;
+    border: none;
+    border-radius: 10px;
+    width: 22vw;
+    min-width: 300px;
+    display: flex;
+
+    flex-wrap: wrap;
+    /* border: 1px solid black; */
+}
+.input{
+
+    font-family: 'Skranji', cursive;
+    /* font-family: 'Fuggles', cursive; */
+    flex:calc( 100% / 3.5);  
+
+    height: 70px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 3.6rem;
+}
+
+.input-1{
+    border-bottom:  var(--border-width) solid var(--border-color);
+}
+.input-2{
+    border-left : var(--border-width) solid var(--border-color);
+    border-right:   var(--border-width) solid var(--border-color);
+    border-bottom:   var(--border-width) solid var(--border-color);
+}
+.input-3{
+    border-bottom:   var(--border-width) solid var(--border-color);
+}
+.input-4{
+    border-bottom:   var(--border-width) solid var(--border-color);
+
+}
+.input-5{
+   
+        border-left :  var(--border-width) solid var(--border-color);
+        border-right:   var(--border-width) solid var(--border-color);
+        border-bottom:   var(--border-width) solid var(--border-color); 
+}
+.input-6{
+    border-bottom:   var(--border-width) solid var(--border-color);   
+}
+.input-8{
+    border-left :  var(--border-width) solid var(--border-color);
+    border-right:   var(--border-width) solid var(--border-color);
+
+}
+.input::target-text{
+    
+}
+.hoverOnItem{
+    color: white;
+    font-size: 20px;
+}
+.hoverOnItem:hover{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+}
+@keyframes textAnimation{
+    0%{
+        font-size: 1rem;
+    }
+    100%{
+        font-size: 4rem;
+    }
+}
+.xTurn{
+    color: green;
+}
+.input:active{
+   
+}
+.line{
+   
+}
+.lineTop{
+    z-index: 1;
+    position: absolute;
+    width: 300px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: red;
+    animation: lineAnimation 1s ;
+        top: 25px;
+}
+.lineMiddle{
+    z-index: 1;
+    position: absolute;
+    width: 300px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: red;
+    animation: lineAnimation 1s ;
+    top: 100px;
+}
+.lineBottom{
+    z-index: 1;
+    position: absolute;
+    width: 300px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: red;
+    animation: lineAnimation 1s ;
+    top: 180px;
+}
+.lineColFirst{
+    z-index: 1;
+    position: absolute;
+    width: 8px;
+    height: 215px;
+    border-radius: 10px;
+    background-color: red;
+    animation: lineColAnimation 1s ;
+    left: 50px;
+}
+.lineColSecond{
+    z-index: 1;
+    position: absolute;
+    width: 8px;
+    height: 215px;
+    border-radius: 10px;
+    background-color: red;
+    animation: lineColAnimation 1s ;
+    left: 160px;
+}
+.lineColThird{
+    z-index: 1;
+    position: absolute;
+    width: 8px;
+    height: 215px;
+    border-radius: 10px;
+    background-color: red;
+    animation: lineColAnimation 1s ;
+    left: 265px;
+}
+.lineDiagonalLeft{
+    z-index: 1;
+    position: absolute;
+    left: 50px;
+    border-bottom: 8px solid red;
+    width: 310px;
+    transform: rotate(40deg);
+    transform-origin: top left;
+    animation: lineDiagonalAni 1s ;
+}
+.lineDiagonalRight{
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    left: 270px;
+    border-bottom: 8px solid red;
+    width: 300px;
+    transform: rotate(145deg);
+    transform-origin: top left;
+    animation: lineDiagonalAni 1s ;
+}
+
+
+
+@keyframes lineAnimation{
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 310px;
+    }
+}
+@keyframes lineColAnimation{
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 215px;
+    }
+}
+@keyframes lineDiagonalAni{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 280px;
+    }
+}
+/* .winRowTop{ 
+    top: 195px;
+    z-index: 1;
+   
+    width: 300px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: red;
+    animation: lineAnimation 3s ;
+} */
+
+
+/* result container */
+.shrink{
+
+    transform: scale(.1);
+    display: none;
+}
+.result{
+    position: absolute;
+    z-index: 1;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    
+    padding: 6rem;
+ 
+    top: 0px;
+    left: 120;
+    right: 100;
+    background-color: rgba(101, 0, 202, 0.942);
+}
+button{
+ 
+    font-family: 'Oswald', sans-serif;
+    background-color: #111827;
+    border: none;
+    border-radius: .75rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 110px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: .75rem 1.2rem;
+    text-align: center;
+
+}
+.AppContainer{
+    width: 100%;
+    height: 100vh;
+    /* background-color: black; */
+    background: linear-gradient(to right, rgb(0, 0, 0),black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.winnerText{
+
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom:10px ;
+}
+
+.copyright{
+    width: 100%;
+    position: fixed;
+    bottom: 4px;
+      left: 0px;
+  }
+  .copyrightTxt{
+    font-size: 8px;
+    color: rgba(221, 221, 221, 0.513);
+    text-align: center;
+    letter-spacing: 1px;
+    text-shadow: 0 0 14px rgb(57, 57, 57);
+  }
+  .myName{
+    color: rgba(206, 206, 206, 0.758);
+  }

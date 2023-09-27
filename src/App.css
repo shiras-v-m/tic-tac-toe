@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Borel&family=Fuggles&family=Lato:wght@400;700;900&family=Oswald:wght@300;400;500;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,600;1,700&display=swap');
+html{
+    cursor: url("https://assets.codepen.io/1480814/cursor.svg"), auto
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    overflow: hidden;
 }
+.shrink{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    transform: scale(.1);
+    display: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.result{
+    z-index: 1;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    
+    padding: 6rem;
+    position: fixed;
+    left: 100;
+    right: 100;
+    background-color: rebeccapurple;
 }
+button{
+ 
+    font-family: 'Oswald', sans-serif;
+    background-color: #111827;
+    border: none;
+    border-radius: .75rem;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: .75rem 1.2rem;
+    text-align: center;
 
-.App-link {
-  color: #61dafb;
 }
+.AppContainer{
+    width: 100%;
+    height: 100vh;
+    /* background-color: black; */
+    background: linear-gradient(to right, rgb(0, 0, 0),black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.winnerText{
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom:10px ;
 }
